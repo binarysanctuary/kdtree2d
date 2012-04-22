@@ -16,7 +16,7 @@ test {
 }
 
 dependencies {
-    compile ':commons:0.1.0'
+    compile 'com.binarysanctuary:commons:0.1.0'
     testCompile 'org.testng:testng:6.5.1'
 }
 
