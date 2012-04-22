@@ -1,12 +1,13 @@
 apply plugin: 'java'
 apply plugin: 'idea'
 
-version = '0.1'
+version = '0.1.0'
 
 sourceCompatibility = 7
 targetCompatibility = 7
 
 repositories {
+    flatDir { dirs "lib" }
     mavenCentral()
 }
 
@@ -15,7 +16,7 @@ test {
 }
 
 dependencies {
-    compile fileTree( dir: 'lib', include: '*.jar')
+    compile ':commons:0.1.0'
     testCompile 'org.testng:testng:6.5.1'
 }
 
