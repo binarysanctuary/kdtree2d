@@ -1,0 +1,25 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+
+version = '0.1'
+
+sourceCompatibility = 7
+targetCompatibility = 7
+
+repositories {
+    mavenCentral()
+}
+
+test {
+    useTestNG()
+}
+
+dependencies {
+    compile fileTree( dir: 'lib', include: '*.jar')
+    testCompile 'org.testng:testng:6.5.1'
+}
+
+jar {
+    // create fat-jar
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+}
